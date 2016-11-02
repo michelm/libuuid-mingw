@@ -16,7 +16,7 @@ clean:
 	
 install: all
 	mkdir -p $(PREFIX)/bin
-	mkdir -p $(PREFIX)/include
+	mkdir -p $(PREFIX)/include/uuid
 	cp $(TARGET).dll $(PREFIX)/bin
-	cp *.h $(PREFIX)/include
+	cp include/uuid/*.h $(PREFIX)/include/uuid
 
