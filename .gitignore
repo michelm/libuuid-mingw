@@ -3,4 +3,6 @@
 .settings
 *.o
 *.dll
-
+.build
+.lock*
+out

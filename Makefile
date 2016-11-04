@@ -7,6 +7,8 @@ VERSION 	:= $(MAJOR)
 TARGET  	:= lib$(NAME)-$(VERSION)
 SOURCES		:= $(wildcard src/*.c)
 OBJECTS		:= $(SOURCES:.c=.o)
+CC			?= x86_64-w64=mingw32-gcc
+AR			?= x86_64-w64=mingw32-ar
 
 all: clean $(OBJECTS)
 	$(CC) -shared -o $(TARGET).dll $(OBJECTS) -Wl,--out-implib,$(TARGET).a $(LINKFLAGS)
