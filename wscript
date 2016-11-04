@@ -21,8 +21,16 @@ def configure(conf):
 
 
 def build(bld):
+	name='uuid'
+	
+	if bld.env.DEST_OS == 'win32':
+		target='libuuid-1'
+	else:
+		target=name
+
 	bld.shlib(
-		target='uuid',
+		name=name,
+		target=target,
 		source=bld.path.ant_glob('src/*.c'),
 		includes=['./src', './include'],
 		export_includes=['./include'],
